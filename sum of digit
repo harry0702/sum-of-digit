@@ -1,0 +1,28 @@
+#include<stdio.h>
+
+int dosum(int);
+int main()
+{
+     int num,sum;
+     printf("Enter a number to perform sum:");
+     scanf("%d",&num);
+
+     sum = dosum(num);
+
+     printf("Sum of digits of given number is: %d",sum);
+     return 0;
+}
+
+int dosum( int num)
+{
+   static int sum =0,r;
+
+   if (num!=0)
+
+   {
+     r=num%10;
+     sum=sum+r;
+     dosum(num/10);
+   }
+   return sum;
+}
